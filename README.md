@@ -1,7 +1,7 @@
-Use Router in Next Navigation
+1). Use Router in Next Navigation
 
-State as a Snapshot
+2). State as a Snapshot
 
- Suspense
+3). Suspense
 
-State Management
+4). State Management
