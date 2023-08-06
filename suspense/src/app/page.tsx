@@ -5,6 +5,7 @@ import {Suspense} from 'react'
 function App(){
   
 const [state,setState]=useState([{}])
+
 useEffect(()=>{
   async function getApi(){
   const api=await fetch('http://universities.hipolabs.com/search?country=Pakistan')
@@ -12,17 +13,18 @@ useEffect(()=>{
   console.log(json)  
   setState(json);
   }
+  
   getApi()
-},[state]) 
+},[]) 
+
 return (
   <div>
     <ul>
       <b>
+      {state.length === 1?(<h2>Loading....</h2>):null}
         {state.map((temp:any, ind) => {
         return (
-          <Suspense fallback={<h2>Loading........</h2>}>
         <li key={ind}>{temp.name}</li>
-        </Suspense>
         )
         
 
